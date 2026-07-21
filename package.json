@@ -1,9 +1,10 @@
 {
   "name": "cursor-themes",
-  "displayName": "Cursor Themes (Unofficial)",
-  "description": "A faithful recreation of the Cursor editor's signature look for VS Code — Cursor Dark, Cursor Light, Dark Midnight, Dark High Contrast, and Light Colorblind. Lovingly crafted, unofficial.",
-  "version": "1.0.1",
+  "displayName": "Cursor Themes for VS Code",
+  "description": "A faithful recreation of the Cursor editor's signature look for VS Code — Cursor Dark, Cursor Light, Dark Midnight, Dark High Contrast, and Light Colorblind.",
+  "version": "1.0.2",
   "publisher": "evanlong",
+  "icon": "icon.png",
   "author": {
     "name": "Evan Long",
     "url": "https://github.com/evanlong-me"

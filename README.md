@@ -34,6 +34,3 @@ To follow the system appearance (dark/light auto-switching, like Cursor does):
 
 The themes are kept in sync with the latest Cursor releases. Each update is published to the VS Code Marketplace and as a GitHub release.
 
-## Disclaimer
-
-This is an unofficial, fan-made project. It is not affiliated with, endorsed by, or sponsored by Cursor or Anysphere. "Cursor" and the Cursor logo are trademarks of their respective owner; all credit for the original theme design goes to the Cursor team. If you are the rights holder and would like anything changed or removed, please open an issue.
