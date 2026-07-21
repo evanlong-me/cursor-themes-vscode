@@ -1,0 +1,43 @@
+name: Publish
+
+# Tag-driven release: the version is decided by whoever cuts the tag
+# (usually the agent after syncing themes from a new Cursor.app release).
+# Nothing here auto-increments versions.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify tag matches package.json version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG=$(node -p "require('./package.json').version")
+          if [ "$TAG" != "$PKG" ]; then
+            echo "tag v$TAG does not match package.json version $PKG"
+            exit 1
+          fi
+
+      - name: Package VSIX
+        run: npx -y @vscode/vsce package -o cursor-themes.vsix
+
+      - name: Publish to VS Code Marketplace
+        run: npx -y @vscode/vsce publish -p "$VSCE_PAT"
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+      - name: Create GitHub Release with VSIX
+        run: gh release create "$GITHUB_REF_NAME" cursor-themes.vsix --title "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
