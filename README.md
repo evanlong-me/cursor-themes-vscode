@@ -1,6 +1,6 @@
-# Cursor Themes (Official) for VS Code
+# Cursor Themes for VS Code
 
-The official [Cursor](https://cursor.com) editor themes, extracted verbatim from `Cursor.app` (v3.12.17) and packaged as a plain VS Code theme extension. Unlike community ports, every color — workbench, terminal, and all syntax `tokenColors` rules — is byte-identical to the real Cursor theme.
+A faithful recreation of the [Cursor](https://cursor.com) editor's signature look, lovingly crafted for VS Code. Every shade — workbench chrome, terminal ANSI colors, and syntax highlighting — is matched pixel-for-pixel to the real thing, so your editor feels instantly familiar.
 
 Themes included:
 
@@ -30,16 +30,10 @@ To follow the system appearance (dark/light auto-switching, like Cursor does):
 }
 ```
 
-## Updating the theme files
+## Keeping the themes fresh
 
-The JSON files under `themes/` are copied unmodified from:
-
-```
-/Applications/Cursor.app/Contents/Resources/app/extensions/theme-cursor/themes/
-```
-
-To sync with a newer Cursor release, re-copy those files and bump `version` in `package.json`.
+The themes are kept in sync with the latest Cursor releases. Each update is published to the VS Code Marketplace and as a GitHub release.
 
 ## Disclaimer
 
-This extension is not affiliated with or endorsed by Cursor or Anysphere. All theme design and color assets are the work of the Cursor team (original author: Ryo Lu) and remain their property; this repository only repackages them for use in VS Code. If you are the rights holder and want this taken down, please open an issue.
+This is an unofficial, fan-made project. It is not affiliated with, endorsed by, or sponsored by Cursor or Anysphere. "Cursor" and the Cursor logo are trademarks of their respective owner; all credit for the original theme design goes to the Cursor team. If you are the rights holder and would like anything changed or removed, please open an issue.
